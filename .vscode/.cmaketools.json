@@ -1,0 +1,63 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/home/jai/Projects/elevator/build",
+            "name": "elevator",
+            "sourceDirectory": "/home/jai/Projects/elevator",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/jai/Projects/elevator/build/elevator"
+                ],
+                "buildDirectory": "/home/jai/Projects/elevator/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "include/elevator.h"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-g -Wall  ",
+                    "includePath": [
+                      {
+                        "path": "/home/jai/Projects/elevator/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/elevator.cpp",
+                      "src/simulate.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "elevator",
+                "linkLanguageFlags": "-g -Wall",
+                "linkerLanguage": "CXX",
+                "name": "elevator",
+                "sourceDirectory": "/home/jai/Projects/elevator",
+                "type": "EXECUTABLE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.0005740208752698095",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

@@ -1,0 +1,4 @@
+# ninja log v5
+1	289	0	CMakeFiles/elevator.dir/src/simulate.cpp.o	2607349277b53666
+0	293	0	CMakeFiles/elevator.dir/src/elevator.cpp.o	d09178542d1f2599
+293	405	0	elevator	46e64c9846e56789
