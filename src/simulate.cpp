@@ -7,11 +7,18 @@
  */
 
 #include <iostream>
+#include <vector>
 #include "elevator.h"
 using namespace std;
 
 int main(int argc, char* argv[])
 {
-    Elevator myElevator;
+    int n;
+    cout<<"Enter the number of elevators you want to simulate: ";
+    cin>>n;
+    cout<<n<<" elevators have now been initialized"<<endl;
+    
     return 0;
 }
+
+void simulate()
