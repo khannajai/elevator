@@ -26,6 +26,7 @@
                   {
                     "isGenerated": false,
                     "sources": [
+                      "include/controller.h",
                       "include/elevator.h"
                     ]
                   },
@@ -39,6 +40,7 @@
                     "isGenerated": false,
                     "language": "CXX",
                     "sources": [
+                      "src/controller.cpp",
                       "src/elevator.cpp",
                       "src/simulate.cpp"
                     ]
@@ -56,7 +58,7 @@
         ]
       }
     ],
-    "cookie": "0.5868351248696155",
+    "cookie": "0.03634606753135583",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

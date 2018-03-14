@@ -10,10 +10,9 @@
 #define ELEVATOR
 
 #include <vector>
+#include <set>
 #include <cassert>
 
-namespace elevator
-{
 /**
  * @brief 
  * 
@@ -23,52 +22,40 @@ class Elevator
 public:
     static int generateID;
     /**
-     * @brief Construct a new Elevator object at floor 0 
-     * 
-     * @param floors : nunmber of floors in this elevator shaft. Defaults to 20 floors
+     * @brief Construct a new Elevator object at floor 0 with 20 maximum floors
      */
-    Elevator(int floors=20)
-        :noOfFloors(floors)
-    {
-        current=0;
-        elevatorID=generateID++;
-        state=STOPPED_OPEN;
-    }
-    /**
-     * @brief Request the elevator at a floor
-     * 
-     * @param floor : floor number
-     */
-    void call(int floor)
-    {
-        assert(floor<=noOfFloors);
-        floorList.push_back(floor);
-    }
+    Elevator();
 
     enum ElevatorState
     {
         STOPPED_OPEN,
-        STOPPED_CLOSE,
+        STOPPED_CLOSED,
         MOVING_UP,
         MOVING_DOWN,
     };
 
-    ElevatorState getState()
+    int getState();
+    int getCurrent();
+    int getNext();
+    int getElevatorID();
+    std::set<int> getUpList();
+    std::set<int> getDownList();
+    void printAll();
+    bool operator< (const Elevator &other) const
     {
-        return state;
+        return elevatorID < other.elevatorID;
     }
+
 private:
     int elevatorID;
-    const int noOfFloors;
+    int noOfFloors;
     int current;
     int next;
-    vector<int> upList;
-    vector<int> downList;
+    std::set<int> upList;
+    std::set<int> downList;
     ElevatorState state;
 };
 
-int Elevator::generateID=1;
 
-}
 
 #endif

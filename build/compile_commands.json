@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/jai/Projects/elevator/build",
+  "command": "/usr/bin/c++   -I../include  -g -Wall   -o CMakeFiles/elevator.dir/src/controller.cpp.o -c /home/jai/Projects/elevator/src/controller.cpp",
+  "file": "/home/jai/Projects/elevator/src/controller.cpp"
+},
+
+{
+  "directory": "/home/jai/Projects/elevator/build",
   "command": "/usr/bin/c++   -I../include  -g -Wall   -o CMakeFiles/elevator.dir/src/elevator.cpp.o -c /home/jai/Projects/elevator/src/elevator.cpp",
   "file": "/home/jai/Projects/elevator/src/elevator.cpp"
 },
