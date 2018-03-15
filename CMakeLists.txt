@@ -8,7 +8,7 @@ file(GLOB SOURCES_TEST "test/*.cpp")
 
 #for linking the files
 include_directories(${SOURCES_INCLUDE})
-add_executable(elevator ${SOURCES})
+add_executable(elevator-simulator ${SOURCES})
 
 #compiler flags
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -pthread")
