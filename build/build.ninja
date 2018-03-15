@@ -49,19 +49,19 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_elevator: phony
 build CMakeFiles/elevator.dir/src/controller.cpp.o: CXX_COMPILER__elevator ../src/controller.cpp || cmake_object_order_depends_target_elevator
   DEP_FILE = CMakeFiles/elevator.dir/src/controller.cpp.o.d
-  FLAGS = -g -Wall
+  FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
   OBJECT_DIR = CMakeFiles/elevator.dir
   OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
 build CMakeFiles/elevator.dir/src/elevator.cpp.o: CXX_COMPILER__elevator ../src/elevator.cpp || cmake_object_order_depends_target_elevator
   DEP_FILE = CMakeFiles/elevator.dir/src/elevator.cpp.o.d
-  FLAGS = -g -Wall
+  FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
   OBJECT_DIR = CMakeFiles/elevator.dir
   OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
 build CMakeFiles/elevator.dir/src/simulate.cpp.o: CXX_COMPILER__elevator ../src/simulate.cpp || cmake_object_order_depends_target_elevator
   DEP_FILE = CMakeFiles/elevator.dir/src/simulate.cpp.o.d
-  FLAGS = -g -Wall
+  FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
   OBJECT_DIR = CMakeFiles/elevator.dir
   OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
@@ -74,7 +74,7 @@ build CMakeFiles/elevator.dir/src/simulate.cpp.o: CXX_COMPILER__elevator ../src/
 # Link the executable elevator
 
 build elevator: CXX_EXECUTABLE_LINKER__elevator CMakeFiles/elevator.dir/src/controller.cpp.o CMakeFiles/elevator.dir/src/elevator.cpp.o CMakeFiles/elevator.dir/src/simulate.cpp.o
-  FLAGS = -g -Wall
+  FLAGS = -g -Wall -pthread
   OBJECT_DIR = CMakeFiles/elevator.dir
   POST_BUILD = :
   PRE_LINK = :

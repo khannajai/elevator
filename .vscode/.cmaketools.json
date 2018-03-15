@@ -31,7 +31,7 @@
                     ]
                   },
                   {
-                    "compileFlags": "-g -Wall  ",
+                    "compileFlags": "-g -Wall -pthread  ",
                     "includePath": [
                       {
                         "path": "/home/jai/Projects/elevator/include"
@@ -47,7 +47,7 @@
                   }
                 ],
                 "fullName": "elevator",
-                "linkLanguageFlags": "-g -Wall",
+                "linkLanguageFlags": "-g -Wall -pthread",
                 "linkerLanguage": "CXX",
                 "name": "elevator",
                 "sourceDirectory": "/home/jai/Projects/elevator",
@@ -58,7 +58,7 @@
         ]
       }
     ],
-    "cookie": "0.03634606753135583",
+    "cookie": "0.9785814380155333",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

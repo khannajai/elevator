@@ -9,11 +9,16 @@
 #include <iostream>
 #include "elevator.h"
 #include "controller.h"
+#include <thread>
+
 using namespace std;
+
 
 int main(int argc, char* argv[])
 {
     Controller myController(16);
+    cout<<"Initialized lifts: "<<endl;
+    myController.printStatus();
     myController.simulate();
     return 0;
 }

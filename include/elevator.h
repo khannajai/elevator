@@ -38,6 +38,7 @@ public:
     int getCurrent();
     int getNext();
     int getElevatorID();
+    void run();
     std::set<int> getUpList();
     std::set<int> getDownList();
     void printAll();

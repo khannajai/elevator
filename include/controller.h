@@ -21,11 +21,12 @@ public:
     Controller(int numLifts);
     void simulate();
     void printStatus();
-    void floorRequest(int atFloor);
-    void elevatorRequest(int toFloor);
+    void floorRequest(int elevatorID, int atFloor);
+    void elevatorRequest(int elevatorID, int toFloor);
     
 private:
     std::vector<Elevator> lift;
+    
 };
 
 #endif

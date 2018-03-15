@@ -9,8 +9,9 @@
 #include <iostream>
 #include <set>
 #include "elevator.h"
+#include <thread>
 
-int Elevator::generateID=1;
+int Elevator::generateID=0;
 
 Elevator::Elevator()
 {
@@ -19,6 +20,14 @@ Elevator::Elevator()
     next=0;
     elevatorID=generateID++;
     state=STOPPED_CLOSED;
+}
+
+void Elevator::run()
+{
+    while(1)
+    {
+
+    }
 }
 
 int Elevator::getState()
