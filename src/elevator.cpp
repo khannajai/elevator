@@ -1,5 +1,5 @@
 /**
- * @brief 
+ * @brief Implementation of elevator class
  * 
  * @file elevator.cpp
  * @author Jai Khanna
@@ -225,7 +225,7 @@ int Elevator::getNoOfFloors()
     return noOfFloors;
 }
 
-void Elevator::printAll()
+void Elevator::printAll() 
 {
     std::cout<<elevatorID<<"\t"<<current<<"\t"<<next<<"\t";
     switch(state)

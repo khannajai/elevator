@@ -1,19 +1,17 @@
 [
 {
   "directory": "/home/jai/Projects/elevator/build",
-  "command": "/usr/bin/c++   -I../include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/controller.cpp.o -c /home/jai/Projects/elevator/src/controller.cpp",
+  "command": "/usr/bin/c++   -I/home/jai/Projects/elevator/include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/controller.cpp.o -c /home/jai/Projects/elevator/src/controller.cpp",
   "file": "/home/jai/Projects/elevator/src/controller.cpp"
 },
-
 {
   "directory": "/home/jai/Projects/elevator/build",
-  "command": "/usr/bin/c++   -I../include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o -c /home/jai/Projects/elevator/src/elevator-simulator.cpp",
+  "command": "/usr/bin/c++   -I/home/jai/Projects/elevator/include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o -c /home/jai/Projects/elevator/src/elevator-simulator.cpp",
   "file": "/home/jai/Projects/elevator/src/elevator-simulator.cpp"
 },
-
 {
   "directory": "/home/jai/Projects/elevator/build",
-  "command": "/usr/bin/c++   -I../include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o -c /home/jai/Projects/elevator/src/elevator.cpp",
+  "command": "/usr/bin/c++   -I/home/jai/Projects/elevator/include  -g -Wall -pthread   -o CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o -c /home/jai/Projects/elevator/src/elevator.cpp",
   "file": "/home/jai/Projects/elevator/src/elevator.cpp"
 }
 ]

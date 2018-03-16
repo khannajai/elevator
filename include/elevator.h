@@ -1,5 +1,5 @@
 /**
- * @brief 
+ * @brief Elevator class header.
  * 
  * @file elevator.h
  * @author Jai Khanna
@@ -16,7 +16,7 @@
 #include <set>
 
 /**
- * @brief 
+ * @brief Represents an elevator object, along with its scheduling and request handling methods.
  * 
  */
 class Elevator
@@ -24,13 +24,31 @@ class Elevator
 public:
     static int generateID;
     /**
-     * @brief Construct a new Elevator object at floor 0 with 20 maximum floors
+     * @brief Construct a new Elevator object at floor 0 with 20 maximum floors, 
+     * and initializes other member variables too
      */
     Elevator();
 
+    /**
+     * @brief Runs the elevator. Contnuously checks for requests in UpList or DownList and moves
+     * the elevator.
+     * 
+     */
     void run();
+
+    /**
+     * @brief Inserts pickup and drop requests in UpList or DownList. 
+     * 
+     * @param floor: The floor number requested for
+     * @return true If request was succesfully handled
+     * @return false 
+     */
     bool requestHandler(int floor);
 
+    /**
+     * @brief Moves the elevator
+     * 
+     */
     void goUp();
     void goDown();
     void openDoor();

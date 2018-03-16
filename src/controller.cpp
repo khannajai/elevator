@@ -1,5 +1,5 @@
 /**
- * @brief 
+ * @brief Implementation of controller class
  * 
  * @file controller.cpp
  * @author Jai Khanna
@@ -32,11 +32,13 @@ Controller::Controller(int numLifts)
         Elevator temp;
         lift.push_back(temp);
     }
+    std::cout<<"Initialized "<<lift.size()<<" elevators."<<std::endl;
 
 }
 
 void Controller::simulate()
 {
+    //creating threads
     std::vector<std::thread> runningLift;
     for (auto it=lift.begin();it!=lift.end();++it)
     {
@@ -46,6 +48,7 @@ void Controller::simulate()
 
     cli();
 
+    //joining threads
     for (unsigned int i=0; i<runningLift.size(); ++i)
     {
         if (runningLift[i].joinable())
@@ -61,11 +64,14 @@ void Controller::cli()
     while(1)
     {
         std::string input;
-        std::cout<<"Enter a command: "<<std::endl;
+        std::cout<<"Enter a command ('help' for usage): "<<std::endl;
 
         std::string allwords;
         std::getline(std::cin, allwords);
-
+        if(allwords.empty())
+        {
+            printStatus();
+        }
         // Parse words into a vector
         std::vector<std::string> word;
         std::string mystring;
@@ -86,7 +92,11 @@ void Controller::cli()
 
             else if(word[0].compare("help")==0)
             {
-                std::cout<<"Help message"<<std::endl;
+                std::cout<<"usage:"<<std::endl; 
+                std::cout<<"<Elevator_ID> <Requested_floor> - Make a floor request to an elevator"<<std::endl;
+                std::cout<<"eg: 6 4 - makes a request to elevator 6, for floor 4"<<std::endl;
+                std::cout<<"help - show help message"<<std::endl;
+                std::cout<<"status - show status chart of elevators"<<std::endl;
             }
             else
             {
