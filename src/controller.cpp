@@ -100,7 +100,7 @@ void Controller::cli()
             }
             else
             {
-                std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+
             }
         }
 
@@ -123,12 +123,12 @@ void Controller::cli()
 
             else
             {
-                std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+            
             }
         }
         else
         {
-            std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+            //std::cout<<"Invalid command. Enter 'help'."<<std::endl;
         }
 
     }
