@@ -123,7 +123,7 @@ void Controller::cli()
 
             else
             {
-            
+                std::cout<<"Request unsuccesful. Try again."<<std::endl;
             }
         }
         else
