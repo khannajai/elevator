@@ -1,3 +1,0 @@
-/home/jai/Projects/elevator/build/CMakeFiles/rebuild_cache.dir
-/home/jai/Projects/elevator/build/CMakeFiles/elevator-simulator.dir
-/home/jai/Projects/elevator/build/CMakeFiles/edit_cache.dir
