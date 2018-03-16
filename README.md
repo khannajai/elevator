@@ -23,12 +23,17 @@ make
 
 ## Code Description
 `/include`
+
   `controller.h`: Controller class header. Represents a controller object. A controller acts as an interface that simulates multiple elevators, takes requests from the user and shows the status of the elevators.
+  
   `elevator.h`: Elevator class header. Represents an elevator object, along with its scheduling and request handling methods.
 
 `/src`
+
   `controller.cpp`: Implementation of the controller class
+  
   `elevator.cpp`: Implementation of the elevator class
+  
   `elevator-simulator.cpp`: Contains the `main()` function
 
 ## Scheduling algorithm
