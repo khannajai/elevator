@@ -40,46 +40,46 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Object build statements for EXECUTABLE target elevator
+# Object build statements for EXECUTABLE target elevator-simulator
 
 
 #############################################
-# Order-only phony target for elevator
+# Order-only phony target for elevator-simulator
 
-build cmake_object_order_depends_target_elevator: phony
-build CMakeFiles/elevator.dir/src/controller.cpp.o: CXX_COMPILER__elevator ../src/controller.cpp || cmake_object_order_depends_target_elevator
-  DEP_FILE = CMakeFiles/elevator.dir/src/controller.cpp.o.d
+build cmake_object_order_depends_target_elevator-simulator: phony
+build CMakeFiles/elevator-simulator.dir/src/controller.cpp.o: CXX_COMPILER__elevator-simulator ../src/controller.cpp || cmake_object_order_depends_target_elevator-simulator
+  DEP_FILE = CMakeFiles/elevator-simulator.dir/src/controller.cpp.o.d
   FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/elevator.dir
-  OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
-build CMakeFiles/elevator.dir/src/elevator.cpp.o: CXX_COMPILER__elevator ../src/elevator.cpp || cmake_object_order_depends_target_elevator
-  DEP_FILE = CMakeFiles/elevator.dir/src/elevator.cpp.o.d
+  OBJECT_DIR = CMakeFiles/elevator-simulator.dir
+  OBJECT_FILE_DIR = CMakeFiles/elevator-simulator.dir/src
+build CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o: CXX_COMPILER__elevator-simulator ../src/elevator-simulator.cpp || cmake_object_order_depends_target_elevator-simulator
+  DEP_FILE = CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o.d
   FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/elevator.dir
-  OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
-build CMakeFiles/elevator.dir/src/simulate.cpp.o: CXX_COMPILER__elevator ../src/simulate.cpp || cmake_object_order_depends_target_elevator
-  DEP_FILE = CMakeFiles/elevator.dir/src/simulate.cpp.o.d
+  OBJECT_DIR = CMakeFiles/elevator-simulator.dir
+  OBJECT_FILE_DIR = CMakeFiles/elevator-simulator.dir/src
+build CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o: CXX_COMPILER__elevator-simulator ../src/elevator.cpp || cmake_object_order_depends_target_elevator-simulator
+  DEP_FILE = CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o.d
   FLAGS = -g -Wall -pthread
   INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/elevator.dir
-  OBJECT_FILE_DIR = CMakeFiles/elevator.dir/src
+  OBJECT_DIR = CMakeFiles/elevator-simulator.dir
+  OBJECT_FILE_DIR = CMakeFiles/elevator-simulator.dir/src
 
 # =============================================================================
-# Link build statements for EXECUTABLE target elevator
+# Link build statements for EXECUTABLE target elevator-simulator
 
 
 #############################################
-# Link the executable elevator
+# Link the executable elevator-simulator
 
-build elevator: CXX_EXECUTABLE_LINKER__elevator CMakeFiles/elevator.dir/src/controller.cpp.o CMakeFiles/elevator.dir/src/elevator.cpp.o CMakeFiles/elevator.dir/src/simulate.cpp.o
+build elevator-simulator: CXX_EXECUTABLE_LINKER__elevator-simulator CMakeFiles/elevator-simulator.dir/src/controller.cpp.o CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o
   FLAGS = -g -Wall -pthread
-  OBJECT_DIR = CMakeFiles/elevator.dir
+  OBJECT_DIR = CMakeFiles/elevator-simulator.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = elevator
-  TARGET_PDB = elevator.dbg
+  TARGET_FILE = elevator-simulator
+  TARGET_PDB = elevator-simulator.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -104,7 +104,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 #############################################
 # The main all target.
 
-build all: phony elevator
+build all: phony elevator-simulator
 
 #############################################
 # Make the all target the default.

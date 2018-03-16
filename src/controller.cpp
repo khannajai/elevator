@@ -7,17 +7,21 @@
  */
 
 #include <iostream>
-#include <set>
 #include <string>
 #include <thread>
 #include "elevator.h"
 #include "controller.h"
 #include <functional>
-#include <regex>
+#include <string>
+#include <sstream>
 
 Controller::Controller()
 {
-
+    for (int i=0;i<16;i++)
+    {
+        Elevator temp;
+        lift.push_back(temp);
+    }
 }
 
 Controller::Controller(int numLifts)
@@ -40,23 +44,7 @@ void Controller::simulate()
         runningLift.push_back(std::move(th));
     }
 
-    std::regex elevReq("(\\+|-)?[[:digit:]]+");
-    std::regex floorReq("");
-
-    while(1)
-    {
-        std::string userCommand;
-        std::cout<<"Enter a command: ";
-        std::cin>>userCommand;
-        if (userCommand=="status")
-        {
-            printStatus();
-        }
-        if(userCommand=="exit")
-        {
-            exit(1);
-        }
-    }
+    cli();
 
     for (unsigned int i=0; i<runningLift.size(); ++i)
     {
@@ -68,6 +56,76 @@ void Controller::simulate()
 }
 
 
+void Controller::cli()
+{
+    while(1)
+    {
+        std::string input;
+        std::cout<<"Enter a command: "<<std::endl;
+
+        std::string allwords;
+        std::getline(std::cin, allwords);
+
+        // Parse words into a vector
+        std::vector<std::string> word;
+        std::string mystring;
+        std::istringstream iss(allwords);
+        while(iss >> mystring) word.push_back(mystring);
+
+        if(word.size()==1)
+        {
+            if(word[0].compare("status")==0)
+            {
+                printStatus();
+            }
+
+            else if(word[0].compare("exit")==0)
+            {
+                exit(1);
+            }
+
+            else if(word[0].compare("help")==0)
+            {
+                std::cout<<"Help message"<<std::endl;
+            }
+            else
+            {
+                std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+            }
+        }
+
+        else if(word.size()==2)
+        {
+            int first = atoi(word[0].c_str());
+            int second = atoi(word[1].c_str());
+            if(first>=0 && first<(int)lift.size() && second>0 && second<lift[first].getNoOfFloors())
+            {    
+                int status=lift[first].requestHandler(second);
+                if (status==true)
+                {
+                    std::cout<<"Request made - Elevator "<<first<<" to floor "<<second<<std::endl;
+                }
+                else
+                {
+                    std::cout<<"Request unsuccesful. Try again."<<std::endl;
+                }
+            }
+
+            else
+            {
+                std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+            }
+        }
+        else
+        {
+            std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+        }
+
+    }
+
+}
+
+
 void Controller::printStatus()
 {
     std::cout<<"ID\tCurrent\tNext\tStatus"<<std::endl;
@@ -75,14 +133,4 @@ void Controller::printStatus()
     {
         it->printAll();
     }
-}
-
-void Controller::floorRequest(int id, int atFloor)
-{
-
-}
-
-void Controller::elevatorRequest(int id, int toFloor)
-{
-
 }

@@ -11,7 +11,9 @@
 
 #include <vector>
 #include <set>
-#include <cassert>
+#include <chrono>
+#include <ctime>
+#include <set>
 
 /**
  * @brief 
@@ -26,6 +28,23 @@ public:
      */
     Elevator();
 
+    void run();
+    bool requestHandler(int floor);
+
+    void goUp();
+    void goDown();
+    void openDoor();
+    void closeDoor();
+
+
+    int getState();
+    int getCurrent();
+    int getNext();
+    int getElevatorID();
+    int getNoOfFloors();
+
+    void printAll();    
+
     enum ElevatorState
     {
         STOPPED_OPEN,
@@ -34,29 +53,28 @@ public:
         MOVING_DOWN,
     };
 
-    int getState();
-    int getCurrent();
-    int getNext();
-    int getElevatorID();
-    void run();
-    std::set<int> getUpList();
-    std::set<int> getDownList();
-    void printAll();
-    bool operator< (const Elevator &other) const
+    enum ElevatorDirection
     {
-        return elevatorID < other.elevatorID;
-    }
+        UP,
+        DOWN,
+    };
 
 private:
     int elevatorID;
     int noOfFloors;
+
     int current;
     int next;
+
     std::set<int> upList;
     std::set<int> downList;
+    
+    int timeBetweenFloors;
+    int timeDoorOpen;
+    int timeDoorClose;
+
     ElevatorState state;
+    ElevatorDirection direction;
 };
-
-
 
 #endif

@@ -19,7 +19,7 @@
             "targets": [
               {
                 "artifacts": [
-                  "/home/jai/Projects/elevator/build/elevator"
+                  "/home/jai/Projects/elevator/build/elevator-simulator"
                 ],
                 "buildDirectory": "/home/jai/Projects/elevator/build",
                 "fileGroups": [
@@ -41,15 +41,15 @@
                     "language": "CXX",
                     "sources": [
                       "src/controller.cpp",
-                      "src/elevator.cpp",
-                      "src/simulate.cpp"
+                      "src/elevator-simulator.cpp",
+                      "src/elevator.cpp"
                     ]
                   }
                 ],
-                "fullName": "elevator",
+                "fullName": "elevator-simulator",
                 "linkLanguageFlags": "-g -Wall -pthread",
                 "linkerLanguage": "CXX",
-                "name": "elevator",
+                "name": "elevator-simulator",
                 "sourceDirectory": "/home/jai/Projects/elevator",
                 "type": "EXECUTABLE"
               }
@@ -58,7 +58,7 @@
         ]
       }
     ],
-    "cookie": "0.9785814380155333",
+    "cookie": "0.22039162454965888",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

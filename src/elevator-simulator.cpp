@@ -1,9 +1,9 @@
 /**
  * @brief 
  * 
- * @file simulate.cpp
+ * @file elevator-simulator.cpp
  * @author Jai Khanna
- * @date 2018-03-07
+ * @date 2018-03-15
  */
 
 #include <iostream>
@@ -16,8 +16,9 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    Controller myController(16);
-    cout<<"Initialized lifts: "<<endl;
+    int numElevators=5;
+    Controller myController(numElevators);
+    cout<<"Initialized "<<numElevators<<" elevators."<<endl;
     myController.printStatus();
     myController.simulate();
     return 0;
