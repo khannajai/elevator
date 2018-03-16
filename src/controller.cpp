@@ -94,9 +94,9 @@ void Controller::cli()
             {
                 std::cout<<"usage:"<<std::endl; 
                 std::cout<<"<Elevator_ID> <Requested_floor> - Make a floor request to an elevator"<<std::endl;
-                std::cout<<"eg: 6 4 - makes a request to elevator 6, for floor 4"<<std::endl;
-                std::cout<<"help - show help message"<<std::endl;
-                std::cout<<"status - show status chart of elevators"<<std::endl;
+                std::cout<<"eg: '6 4' - makes a request to elevator 6, for floor 4"<<std::endl;
+                std::cout<<"'help' - show help message"<<std::endl;
+                std::cout<<"'status' or press enter - show status chart of elevators"<<std::endl;
             }
             else
             {

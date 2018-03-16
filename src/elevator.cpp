@@ -138,7 +138,7 @@ bool Elevator::requestHandler(int floor)
 void Elevator::goUp()
 {
     state=MOVING_UP;
-    std::cout<<"Elevator "<<elevatorID<<" moving up."<<std::endl;
+    //std::cout<<"Elevator "<<elevatorID<<" moving up."<<std::endl;
     auto start =std::chrono::system_clock::now();
     while(1)
     {
@@ -155,7 +155,6 @@ void Elevator::goUp()
 void Elevator::goDown()
 {
     state=MOVING_DOWN;
-    std::cout<<"Elevator "<<elevatorID<<" moving down."<<std::endl;
     auto start =std::chrono::system_clock::now();
     while(1)
     {
@@ -172,7 +171,6 @@ void Elevator::goDown()
 void Elevator::openDoor()
 {
     state=STOPPED_OPEN;
-    std::cout<<"Elevator "<<elevatorID<<" stopped at floor "<<current<<std::endl;
     auto start =std::chrono::system_clock::now();
     while(1)
     {
@@ -200,32 +198,32 @@ void Elevator::closeDoor()
     state=STOPPED_CLOSED;
 }
 
-int Elevator::getState()
+int Elevator::getState() const
 {
     return state;
 }
 
-int Elevator::getCurrent()
+int Elevator::getCurrent() const
 {
     return current;
 }
 
-int Elevator::getNext()
+int Elevator::getNext() const
 {
     return next;
 }
 
-int Elevator::getElevatorID()
+int Elevator::getElevatorID() const
 {
     return elevatorID;
 }
 
-int Elevator::getNoOfFloors()
+int Elevator::getNoOfFloors() const
 {
     return noOfFloors;
 }
 
-void Elevator::printAll() 
+void Elevator::printAll() const
 {
     std::cout<<elevatorID<<"\t"<<current<<"\t"<<next<<"\t";
     switch(state)

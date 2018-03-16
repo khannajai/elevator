@@ -55,13 +55,13 @@ public:
     void closeDoor();
 
 
-    int getState();
-    int getCurrent();
-    int getNext();
-    int getElevatorID();
-    int getNoOfFloors();
+    int getState() const;
+    int getCurrent() const;
+    int getNext() const;
+    int getElevatorID() const;
+    int getNoOfFloors() const;
 
-    void printAll();    
+    void printAll() const;    
 
     enum ElevatorState
     {
