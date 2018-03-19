@@ -1,5 +1,0 @@
-# ninja log v5
-0	1082	0	CMakeFiles/elevator-simulator.dir/src/elevator-simulator.cpp.o	81b45a6d3be238e3
-1	1333	0	CMakeFiles/elevator-simulator.dir/src/elevator.cpp.o	947345961d48b912
-0	1676	0	CMakeFiles/elevator-simulator.dir/src/controller.cpp.o	e890137a322254fc
-1676	1833	0	elevator-simulator	d320f0a8a7e096f8

@@ -14,6 +14,7 @@
 #include <functional>
 #include <string>
 #include <sstream>
+#include <chrono>
 
 Controller::Controller()
 {
@@ -32,7 +33,7 @@ Controller::Controller(int numLifts)
         Elevator temp;
         lift.push_back(temp);
     }
-    std::cout<<"Initialized "<<lift.size()<<" elevators."<<std::endl;
+    std::cout<<"Initialized "<<lift.size()<<" elevators"<<" with 20 floors each."<<std::endl;
 
 }
 
@@ -45,6 +46,9 @@ void Controller::simulate()
         std::thread th(std::bind(&Elevator::run, it));
         runningLift.push_back(std::move(th));
     }
+    std::cout<<"Running elevators. Please wait..."<<std::endl;
+    std::this_thread::sleep_for (std::chrono::seconds(3));
+    std::cout<<"Elevators are now running."<<std::endl;
 
     cli();
 
@@ -108,7 +112,7 @@ void Controller::cli()
         {
             int first = atoi(word[0].c_str());
             int second = atoi(word[1].c_str());
-            if(first>=0 && first<(int)lift.size() && second>0 && second<lift[first].getNoOfFloors())
+            if(first>=0 && first<(int)lift.size() && second>=0 && second<=lift[first].getNoOfFloors())
             {    
                 int status=lift[first].requestHandler(second);
                 if (status==true)
