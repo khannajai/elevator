@@ -14,6 +14,7 @@
 #include <chrono>
 #include <ctime>
 #include <set>
+#include <mutex>
 
 /**
  * @brief Represents an elevator object, along with its scheduling and request handling methods.
@@ -61,6 +62,8 @@ public:
     int getElevatorID() const;
     int getNoOfFloors() const;
 
+    bool getifrunning() const;
+
     void printAll() const;    
 
     enum ElevatorState
@@ -93,6 +96,8 @@ private:
 
     ElevatorState state;
     ElevatorDirection direction;
+
+    bool isrunning;
 };
 
 #endif

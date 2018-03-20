@@ -1,27 +1,27 @@
 {
   "variant": {
-    "label": "Release",
+    "label": "Debug",
     "keywordSettings": {
-      "buildType": "release"
+      "buildType": "debug"
     },
-    "description": "Enable optimizations, omit debug info"
+    "description": "Emit debug information without performing optimizations"
   },
   "activeEnvironments": [],
   "codeModel": {
     "configurations": [
       {
-        "name": "Release",
+        "name": "Debug",
         "projects": [
           {
-            "buildDirectory": "/home/jai/Projects/elevator/build",
+            "buildDirectory": "/home/jai/Projects/elevator-simulator/build",
             "name": "elevator",
-            "sourceDirectory": "/home/jai/Projects/elevator",
+            "sourceDirectory": "/home/jai/Projects/elevator-simulator",
             "targets": [
               {
                 "artifacts": [
-                  "/home/jai/Projects/elevator/build/elevator-simulator"
+                  "/home/jai/Projects/elevator-simulator/build/elevator-simulator"
                 ],
-                "buildDirectory": "/home/jai/Projects/elevator/build",
+                "buildDirectory": "/home/jai/Projects/elevator-simulator/build",
                 "fileGroups": [
                   {
                     "isGenerated": false,
@@ -31,10 +31,10 @@
                     ]
                   },
                   {
-                    "compileFlags": "-O3 -DNDEBUG -Wall -pthread  ",
+                    "compileFlags": "-g -Wall -lpthread -pthread  ",
                     "includePath": [
                       {
-                        "path": "/home/jai/Projects/elevator/include"
+                        "path": "/home/jai/Projects/elevator-simulator/include"
                       }
                     ],
                     "isGenerated": false,
@@ -47,10 +47,10 @@
                   }
                 ],
                 "fullName": "elevator-simulator",
-                "linkLanguageFlags": "-O3 -DNDEBUG -Wall -pthread",
+                "linkLanguageFlags": "-g -Wall -lpthread -pthread",
                 "linkerLanguage": "CXX",
                 "name": "elevator-simulator",
-                "sourceDirectory": "/home/jai/Projects/elevator",
+                "sourceDirectory": "/home/jai/Projects/elevator-simulator",
                 "type": "EXECUTABLE"
               }
             ]
@@ -58,7 +58,7 @@
         ]
       }
     ],
-    "cookie": "0.5648182376191346",
+    "cookie": "0.28976960183480016",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

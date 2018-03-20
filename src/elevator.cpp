@@ -12,8 +12,12 @@
 #include <chrono>
 #include <ctime>
 #include <algorithm>
+#include <mutex>
 
 int Elevator::generateID=0;
+
+//std::mutex list_mutex;
+
 
 Elevator::Elevator()
 {
@@ -28,12 +32,17 @@ Elevator::Elevator()
 
     state=STOPPED_CLOSED;
     direction=UP;
+
+    isrunning=0;
 }
 
 void Elevator::run()
 {
+    isrunning=1;
     while(1)
     {
+        //list_mutex.lock();
+        
         //if direction set to up
         if(direction==0)
         {   //if list has floors
@@ -65,7 +74,7 @@ void Elevator::run()
         else if (direction==1)
         {   
             //if list has floors
-            if (!upList.empty())
+            if (!downList.empty())
             {
                 //destination set to highest floor in downList
                 auto it=downList.end();
@@ -90,15 +99,22 @@ void Elevator::run()
                 direction=UP;
             }
         }
+    //list_mutex.unlock();
     }
 }
 
+bool Elevator::getifrunning() const
+{
+    return isrunning;
+}
+
 bool Elevator::requestHandler(int floor)
-{   
+{   //list_mutex.lock();
     //if requested floor is below the current floor
     if(floor<current)
     {
         downList.insert(floor);
+        //list_mutex.unlock();
         return true;
     }
 
@@ -106,6 +122,7 @@ bool Elevator::requestHandler(int floor)
     else if(floor>current)
     {
         upList.insert(floor);
+        //list_mutex.unlock();
         return true;
     }
 
@@ -122,11 +139,13 @@ bool Elevator::requestHandler(int floor)
             if(direction==0)
             {
                 downList.insert(floor);
+                //list_mutex.unlock();
                 return true;
             }
             else
             {
                 upList.insert(floor);
+                //list_mutex.unlock();
                 return true;
             }
         }

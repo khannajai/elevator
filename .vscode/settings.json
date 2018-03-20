@@ -35,6 +35,7 @@
         "cstdlib": "cpp",
         "cstring": "cpp",
         "cwchar": "cpp",
-        "cwctype": "cpp"
+        "cwctype": "cpp",
+        "optional": "cpp"
     }
 }

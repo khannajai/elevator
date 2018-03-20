@@ -47,10 +47,16 @@ void Controller::simulate()
         runningLift.push_back(std::move(th));
     }
     std::cout<<"Running elevators. Please wait..."<<std::endl;
-    std::this_thread::sleep_for (std::chrono::seconds(3));
-    std::cout<<"Elevators are now running."<<std::endl;
-
-    cli();
+    if(checkIfRunning())
+    {
+        std::cout<<"All elevators are now running."<<std::endl;
+        cli();
+    }
+    else
+    {
+        std::cout<<"Could not run elevators. Some error occured. Please try again"<<std::endl;
+        exit(1);
+    }
 
     //joining threads
     for (unsigned int i=0; i<runningLift.size(); ++i)
@@ -62,9 +68,34 @@ void Controller::simulate()
     }
 }
 
+bool Controller::checkIfRunning()
+{
+    unsigned int count=0;
+    while(count!=lift.size())
+    {
+        std::this_thread::sleep_for (std::chrono::seconds(2));
+        count=0;
+        for(auto it=lift.begin();it!=lift.end();++it)
+        {
+            if(it->getifrunning())
+            {
+                count++;
+            }
+        }
+    }
+    if (count==lift.size())
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }    
+}
 
 void Controller::cli()
 {
+    bool status=0;
     while(1)
     {
         std::string input;
@@ -101,6 +132,7 @@ void Controller::cli()
                 std::cout<<"eg: '6 4' - makes a request to elevator 6, for floor 4"<<std::endl;
                 std::cout<<"'help' - show help message"<<std::endl;
                 std::cout<<"'status' or press enter - show status chart of elevators"<<std::endl;
+                std::cout<<"'exit' - stop simulation"<<std::endl;
             }
             else
             {
@@ -113,11 +145,17 @@ void Controller::cli()
             int first = atoi(word[0].c_str());
             int second = atoi(word[1].c_str());
             if(first>=0 && first<(int)lift.size() && second>=0 && second<=lift[first].getNoOfFloors())
-            {    
-                int status=lift[first].requestHandler(second);
+            {   status=0;
+                std::cout<<"Making request. Please wait..."<<std::endl;
+                do
+                {
+                    status=lift[first].requestHandler(second);
+                }
+                while(status==0);
                 if (status==true)
                 {
                     std::cout<<"Request made - Elevator "<<first<<" to floor "<<second<<std::endl;
+                    status=false;
                 }
                 else
                 {
@@ -132,11 +170,9 @@ void Controller::cli()
         }
         else
         {
-            //std::cout<<"Invalid command. Enter 'help'."<<std::endl;
+            
         }
-
     }
-
 }
 
 

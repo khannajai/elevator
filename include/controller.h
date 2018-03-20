@@ -41,6 +41,7 @@ public:
      */
     void simulate();
 
+
     /**
      * @brief Prints status of elevators
      * 
@@ -57,7 +58,14 @@ private:
      * @brief cli to be used in simulate()
      * 
      */
-    void cli();    
+    void cli();
+    /**
+     * @brief Checks if the elevators are running
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool checkIfRunning();
 };
 
 #endif
