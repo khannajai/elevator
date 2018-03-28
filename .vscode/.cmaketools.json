@@ -1,16 +1,16 @@
 {
   "variant": {
-    "label": "Debug",
+    "label": "Release",
     "keywordSettings": {
-      "buildType": "debug"
+      "buildType": "release"
     },
-    "description": "Emit debug information without performing optimizations"
+    "description": "Enable optimizations, omit debug info"
   },
   "activeEnvironments": [],
   "codeModel": {
     "configurations": [
       {
-        "name": "Debug",
+        "name": "Release",
         "projects": [
           {
             "buildDirectory": "/home/jai/Projects/elevator-simulator/build",
@@ -31,7 +31,7 @@
                     ]
                   },
                   {
-                    "compileFlags": "-g -Wall -lpthread -pthread  ",
+                    "compileFlags": "-O3 -DNDEBUG -Wall -lpthread -pthread  ",
                     "includePath": [
                       {
                         "path": "/home/jai/Projects/elevator-simulator/include"
@@ -47,7 +47,7 @@
                   }
                 ],
                 "fullName": "elevator-simulator",
-                "linkLanguageFlags": "-g -Wall -lpthread -pthread",
+                "linkLanguageFlags": "-O3 -DNDEBUG -Wall -lpthread -pthread",
                 "linkerLanguage": "CXX",
                 "name": "elevator-simulator",
                 "sourceDirectory": "/home/jai/Projects/elevator-simulator",
@@ -58,7 +58,7 @@
         ]
       }
     ],
-    "cookie": "0.28976960183480016",
+    "cookie": "0.932184626667943",
     "inReplyTo": "codemodel",
     "type": "reply"
   }
